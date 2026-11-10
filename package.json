@@ -1,0 +1,12 @@
+{
+  "name": "@frag70/agentic-codebase-issue-verifier",
+  "version": "0.1.0",
+  "description": "MCP server triaging GitHub issues, checking reproducibility, and synthesizing test cases",
+  "main": "mcp_server.py",
+  "bin": {
+    "issue-verifier-mcp": "./mcp_server.py"
+  },
+  "keywords": ["mcp", "github-triage", "issue-verifier", "automated-tests", "apify"],
+  "author": "Thomas Fragrante",
+  "license": "Apache-2.0"
+}
