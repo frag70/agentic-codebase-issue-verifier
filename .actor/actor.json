@@ -1,0 +1,26 @@
+{
+  "actorSpecification": 1,
+  "name": "agentic-codebase-issue-verifier",
+  "title": "Agentic Codebase Issue Verifier & Triager (Standby API)",
+  "description": "Zero-proxy Standby API triaging GitHub issues, checking reproducibility, matching root-cause files in the codebase, and synthesizing regression test cases for autonomous coding agents.",
+  "version": "0.1.0",
+  "usesStandbyMode": true,
+  "defaultRunMemoryMbytes": 512,
+  "input": "./INPUT_SCHEMA.json",
+  "output": "./output_schema.json",
+  "pricingInfo": {
+    "pricingModel": "PAY_PER_EVENT",
+    "events": {
+      "actor-start": {
+        "priceUsd": 0.0001,
+        "title": "Standby Request Event",
+        "description": "Base HTTP request invocation"
+      },
+      "issue-triaged": {
+        "priceUsd": 0.01,
+        "title": "Issue Triaged & Verified",
+        "description": "Evaluated issue reproducibility, root-cause files, and synthesized regression test"
+      }
+    }
+  }
+}

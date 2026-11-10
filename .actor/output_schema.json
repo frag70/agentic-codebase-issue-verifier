@@ -1,0 +1,13 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Agentic Issue Triage Output",
+  "description": "Structured issue verification reports, root-cause files, and synthesized regression test cases",
+  "type": "object",
+  "properties": {
+    "triages": {
+      "title": "Triage Reports",
+      "type": "string",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?format=json"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Agentic Codebase Issue Verifier Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "runMode": {
+      "title": "Run Mode",
+      "type": "string",
+      "description": "Standard batch run (scrapes & saves to dataset) or continuous Standby HTTP server",
+      "editor": "select",
+      "default": "BATCH",
+      "prefill": "BATCH",
+      "enum": ["BATCH", "STANDBY_SERVER"],
+      "enumTitles": ["Batch Run (Export to Dataset)", "Standby HTTP Server (Persistent API)"]
+    },
+    "repository": {
+      "title": "GitHub Repository",
+      "type": "string",
+      "description": "Target repository (e.g. pallets/flask, tiangolo/fastapi, or full GitHub URL)",
+      "editor": "textfield",
+      "default": "pallets/flask",
+      "prefill": "pallets/flask"
+    },
+    "issueNumber": {
+      "title": "Issue Number",
+      "type": "integer",
+      "description": "Specific GitHub issue number to triage and verify (e.g. 5000)",
+      "default": 5000
+    },
+    "issues": {
+      "title": "Batch Issue Numbers",
+      "type": "array",
+      "description": "Optional list of issue numbers to triage in batch (up to 20)",
+      "editor": "stringList",
+      "items": {
+        "type": "string"
+      }
+    },
+    "issueUrl": {
+      "title": "Direct Issue URL",
+      "type": "string",
+      "description": "Optional full GitHub issue URL (e.g. https://github.com/pallets/flask/issues/5000)",
+      "editor": "textfield"
+    },
+    "githubToken": {
+      "title": "GitHub Personal Access Token",
+      "type": "string",
+      "description": "Optional GitHub PAT for higher API rate limits or private repository access",
+      "editor": "textfield",
+      "isSecret": true
+    }
+  }
+}
